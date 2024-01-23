@@ -16,12 +16,12 @@ import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 import com.max_pw_iw.train_card.exception.ErrorResponse;
-import com.max_pw_iw.train_card.exception.PersonNotFoundException;
+import com.max_pw_iw.train_card.exception.UserNotFoundException;
 
 @ControllerAdvice
 public class ApplicationExceptionHandler extends ResponseEntityExceptionHandler {
 
-    @ExceptionHandler(PersonNotFoundException.class)
+    @ExceptionHandler(UserNotFoundException.class)
     public ResponseEntity<Object> handleResourceNotFoundException(RuntimeException ex) {
         ErrorResponse error = new ErrorResponse(Arrays.asList(ex.getMessage()));  
         return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);

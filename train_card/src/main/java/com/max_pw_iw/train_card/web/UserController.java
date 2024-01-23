@@ -10,16 +10,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.max_pw_iw.train_card.entity.User;
-import com.max_pw_iw.train_card.services.PersonService;
+import com.max_pw_iw.train_card.services.UserService;
 
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
 @RestController
 @RequestMapping("/person")
-public class PersonController {
+public class UserController {
     
-    private PersonService personService;
+    private UserService personService;
 
     @GetMapping("/{id}")
 	public ResponseEntity<User> findById(@PathVariable Long id) {
